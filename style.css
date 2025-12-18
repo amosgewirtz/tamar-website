@@ -253,6 +253,15 @@ li {
   font-size: 0.9rem;
   color: var(--text-muted);
   margin-top: 0.2rem;
+  margin-bottom: 0.3rem;
+}
+
+.item-meta + .item-meta {
+  margin-top: 0;
+}
+
+.item-meta:last-of-type {
+  margin-bottom: 1.25rem;
 }
 
 .item-links {
