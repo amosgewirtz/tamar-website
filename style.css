@@ -246,7 +246,8 @@ li {
 }
 
 .item-title {
-  font-style: italic;
+  font-weight: 700 !important;
+  font-style: normal !important;
 }
 
 .item-meta {
