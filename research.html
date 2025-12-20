@@ -23,6 +23,7 @@
   <meta name="twitter:image" content="https://tamardenbesten.com/portrait.webp">
   
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body>
   <div class="container">
@@ -56,7 +57,7 @@
         <li>
           <span class="item-title"><a href="documents/dbk_tariffshocks.pdf">The Macroeconomic Effects of Tariffs: Evidence From U.S. Historical Data</a> <span class="author-info">(with <a href="https://www.diegokaenzig.com" target="_blank" rel="noopener">Diego Känzig</a>)</span></span>
           <p class="abstract-toggle">
-            <span class="abstract-label"><em>Abstract</em> <span class="expand-icon expand-icon-down"></span></span>
+            <span class="abstract-label"><em>Abstract</em> <i data-feather="chevron-down" class="expand-icon"></i></span>
           </p>
           <div class="abstract-content" style="display: none;">
             We study the macroeconomic effects of tariff policy using U.S. historical data from 1840–2024. We construct a narrative series of plausibly exogenous tariff changes – based on major legislative actions, multilateral negotiations, and temporary surcharges – and use it as an instrument to identify a structural tariff shock. Tariff increases are consistently contractionary: imports fall sharply, exports decline with a lag, and output and manufacturing activity drop persistently. The shock transmits through both supply and demand channels. Prices rise in the full sample but fall post-WWII, a pattern consistent with changes in the monetary policy response and with stronger international retaliation and reciprocity in the modern trade regime.
@@ -111,6 +112,9 @@
     </main>
   </div>
   <script>
+    // Initialize Feather icons
+    feather.replace();
+    
     document.querySelector('.abstract-toggle').addEventListener('click', function() {
       const abstractContent = this.nextElementSibling;
       const expandIcon = this.querySelector('.expand-icon');
@@ -119,11 +123,13 @@
       if (isExpanded) {
         abstractContent.style.display = 'none';
         this.classList.remove('expanded');
-        expandIcon.className = 'expand-icon expand-icon-down';
+        expandIcon.setAttribute('data-feather', 'chevron-down');
+        feather.replace();
       } else {
         abstractContent.style.display = 'block';
         this.classList.add('expanded');
-        expandIcon.className = 'expand-icon expand-icon-up';
+        expandIcon.setAttribute('data-feather', 'chevron-up');
+        feather.replace();
       }
     });
   </script>
