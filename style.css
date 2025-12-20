@@ -270,6 +270,10 @@ li {
   margin-bottom: 0.1rem;
 }
 
+.item-meta a {
+  color: var(--text-muted);
+}
+
 .item-meta + .item-meta {
   margin-top: 0;
 }
@@ -304,20 +308,14 @@ li {
 .expand-icon {
   display: inline-block;
   margin-left: 0.3rem;
-  width: 0;
-  height: 0;
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-}
-
-.expand-icon-down {
-  border-top: 7px solid var(--text-muted);
-  border-bottom: none;
-}
-
-.expand-icon-up {
-  border-bottom: 7px solid var(--text-muted);
-  border-top: none;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  stroke: var(--text-muted);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
 }
 
 .abstract-content {
