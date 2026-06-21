@@ -55,7 +55,7 @@
       <h2>Working Papers</h2>
       <ul class="item-list">
         <li>
-          <span class="item-title"><a href="https://www.nber.org/papers/w34852" target="_blank" rel="noopener">The Macroeconomic Effects of Tariffs: Evidence From U.S. Historical Data</a> <span class="author-info">(with <a href="https://www.diegokaenzig.com" target="_blank" rel="noopener">Diego Känzig</a>)</span></span>
+          <span class="item-title"><a href="https://www.nber.org/papers/w35102" target="_blank" rel="noopener">The Macroeconomic Effects of Tariffs:<br>Insights from 180 Years of U.S. Trade Policy</a> <span class="author-info">(with <a href="https://sites.google.com/site/regisbarnichon/" target="_blank" rel="noopener">Régis Barnichon</a>, <a href="https://www.diegokaenzig.com" target="_blank" rel="noopener">Diego Känzig</a>, and Ayush Singh)</span></span>
           <p class="abstract-toggle expanded">
             <span class="abstract-label"><em>Abstract</em> <i data-feather="chevron-up" class="expand-icon"></i></span>
           </p>
@@ -63,12 +63,24 @@
             We study the macroeconomic effects of tariff policy using U.S. historical data from 1840—2024. We construct a narrative series of plausibly exogenous tariff changes — based on major legislative actions, multilateral negotiations, and temporary surcharges — and use it as an instrument to identify a structural tariff shock. Tariff increases are contractionary: imports fall sharply, exports decline with a lag, and output and manufacturing activity drop persistently. The shock transmits through both supply and demand channels. Prices rise in the full sample but fall post-World War II, a pattern consistent with changes in the monetary policy response and with stronger international retaliation and reciprocity in the modern trade regime.
           </div>
           <p class="item-links">
-            <a href="documents/dbk_tariffshocks.pdf" target="_blank" rel="noopener">PDF</a>
-            <a href="https://www.nber.org/papers/w34852" target="_blank" rel="noopener">NBER</a>
-            <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5938997" target="_blank" rel="noopener">SSRN</a>
+            <a href="documents/dbbks_tariffshocks.pdf" target="_blank" rel="noopener">PDF</a>
+            <a href="https://www.nber.org/papers/w35102" target="_blank" rel="noopener">NBER</a>
           </p>
           <p style="color: black; margin-top: 0.5em; margin-bottom: 0; font-size: 0.9em;">Coverage: <a href="https://marginalrevolution.com/marginalrevolution/2025/12/the-macroeconomic-effects-of-tariffs-evidence-from-u-s-historical-data.html" target="_blank" rel="noopener">Marginal Revolution</a>, <a href="https://www.wsj.com/economy/do-tariffs-cause-inflation-new-studies-offer-surprising-answer-20d56367#comments_sector" target="_blank" rel="noopener">WSJ</a></p>
-          <p style="color: black; margin-top: 0.15em; margin-bottom: 0; font-size: 0.9em;">Narrative appendix: <a href="documents/dbk_narrativepaper.pdf" target="_blank" rel="noopener">Tariff Changes in the U.S. from 1840–2024: A Narrative Analysis</a></p>
+          <p style="color: black; margin-top: 0.15em; margin-bottom: 0; font-size: 0.9em;">Previous version: <a href="https://www.nber.org/papers/w34852" target="_blank" rel="noopener">The Macroeconomic Effects of Tariffs: Evidence From U.S. Historical Data (February 2026, Den Besten-Känzig)</a></p>
+        </li>
+        <li>
+          <p style="color: black; margin-bottom: 0; font-size: 0.9em;">Narrative companion paper:</p>
+          <span class="item-title"><a href="documents/dbk_narrativepaper.pdf" target="_blank" rel="noopener">Tariff Changes in the U.S. from 1840–2024: A Narrative Analysis</a> <span class="author-info">(with <a href="https://www.diegokaenzig.com" target="_blank" rel="noopener">Diego Känzig</a>)</span></span>
+          <p class="abstract-toggle">
+            <span class="abstract-label"><em>Abstract</em> <i data-feather="chevron-down" class="expand-icon"></i></span>
+          </p>
+          <div class="abstract-content" style="display: none;">
+            This paper contains a detailed narrative analysis of legislative tariff changes in the United States from 1840–2024. The primary aim of this account is to provide the basis for the classification of tariff changes used in Den Besten and Känzig (2025), which in turn allows for the identification of the causal effects of tariff policy on the economy. We systematically identify major tariff policy changes, place each reform in its economic and political context, and assess the stated motivations based on contemporary narrative sources. In this way, we distinguish between tariff changes driven by plausibly exogenous considerations and those responding to prevailing economic conditions. Our narrative analysis identifies 35 major tariff reforms between 1840 and the present. Of these, we classify 21 tariff changes as exogenous and 14 as endogenous. We also hope the narrative account, historiographical research and data contained in this paper is interesting in its own right. To our knowledge, no existing study provides a systematic analysis of the motives behind U.S. tariff policy over such a long historical horizon, spanning from the mid-19th century to the modern era.
+          </div>
+          <p class="item-links">
+            <a href="documents/dbk_narrativepaper.pdf" target="_blank" rel="noopener">PDF</a>
+          </p>
         </li>
       </ul>
 
@@ -110,22 +122,24 @@
     // Initialize Feather icons
     feather.replace();
     
-    document.querySelector('.abstract-toggle').addEventListener('click', function() {
-      const abstractContent = this.nextElementSibling;
-      const expandIcon = this.querySelector('.expand-icon');
-      const isExpanded = abstractContent.style.display !== 'none';
-      
-      if (isExpanded) {
-        abstractContent.style.display = 'none';
-        this.classList.remove('expanded');
-        expandIcon.setAttribute('data-feather', 'chevron-down');
-        feather.replace();
-      } else {
-        abstractContent.style.display = 'block';
-        this.classList.add('expanded');
-        expandIcon.setAttribute('data-feather', 'chevron-up');
-        feather.replace();
-      }
+    document.querySelectorAll('.abstract-toggle').forEach(function(toggle) {
+      toggle.addEventListener('click', function() {
+        const abstractContent = this.nextElementSibling;
+        const expandIcon = this.querySelector('.expand-icon');
+        const isExpanded = abstractContent.style.display !== 'none';
+        
+        if (isExpanded) {
+          abstractContent.style.display = 'none';
+          this.classList.remove('expanded');
+          expandIcon.setAttribute('data-feather', 'chevron-down');
+          feather.replace();
+        } else {
+          abstractContent.style.display = 'block';
+          this.classList.add('expanded');
+          expandIcon.setAttribute('data-feather', 'chevron-up');
+          feather.replace();
+        }
+      });
     });
   </script>
 </body>
